@@ -90,7 +90,7 @@ class ProductManager {
     getProductById = async (productId) => {
         try {
             const products = await this.getProducts();
-            const product = await products.find(product => product.id === productId);
+            const product = products.find(product => product.id === productId);
             return product;
 
         } catch (error) {
