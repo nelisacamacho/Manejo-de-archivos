@@ -102,8 +102,8 @@ class ProductManager {
         try {
             if(!productId || !value) return console.error('Must provide the required information to update a product')
             let products = await this.getProducts();
-            const product = await products.find(product => product.id === productId);
-            const productIdx = await products.findIndex(product => product.id === productId);
+            const product = products.find(product => product.id === productId);
+            const productIdx = products.findIndex(product => product.id === productId);
             products[productIdx] = {
                 ...product,
                 ...value,
